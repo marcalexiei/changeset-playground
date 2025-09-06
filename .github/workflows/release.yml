@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+    paths:
+      - ".changeset/**"
+      - ".github/workflows/release.yml"
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -25,18 +25,19 @@ jobs:
       id-token: write # added for provenance
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Install Dependencies
-        uses: ./.github/actions/install-dependencies
-
       - name: Configure git user for GitHub App
         run: |
           git config --global user.name 'marcalexiei'
           git config --global user.email '24919330+marcalexiei@users.noreply.github.com'
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Install Dependencies
+        uses: ./.github/actions/install-dependencies
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
