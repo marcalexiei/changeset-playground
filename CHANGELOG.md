@@ -1,5 +1,12 @@
 # changeset-playground
 
+## 1.0.2
+
+### Patch Changes
+
+- f810a94: try adding another changeset
+- 236b4b2: chore: try without `persist-credentials`
+
 ## 1.0.1
 
 ### Patch Changes
