@@ -1,5 +1,11 @@
 # changeset-playground
 
+## 1.0.2
+
+### Patch Changes
+
+- aa816fc: docs: add README
+
 ## 1.0.1
 
 ### Patch Changes
