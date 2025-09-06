@@ -9,9 +9,8 @@ on:
     branches:
       - main
   pull_request:
-    types: [opened, synchronize, reopened]
-    # branches:
-    #   - main
+    branches:
+      - main
 
 env:
   HUSKY: 0
